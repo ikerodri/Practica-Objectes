@@ -1,0 +1,48 @@
+Activitat 1:
+<!DOCTYPE html>
+<html>
+    <body>
+    </body>
+    <script type="text/javascript" src="Activitat%201.js">
+    </script>
+    <input type="button" value="Mostra la info" style="width:125px;height:25px" id="boto" onclick="infopag1()"/>
+    <p id="ola"></p>
+</html>
+
+Ativitat 2:
+<!DOCTYPE html>
+<html>
+    <body>
+    </body>
+    <script type="text/javascript" src="Activitat%202.js">
+    </script>
+    <input type="button" value="Pop" style="width:125px;height:25px" id="boto" onclick="pop()"/>
+    <p id="ola"></p>
+    <input type="button" value="Tenca Pop" style="width:125px;height:25px" id="boto" onclick="tencapop()"/>
+    
+</html>
+
+Activitat 3:
+<!DOCTYPE html>
+<html>
+    <body>
+    </body>
+    <script type="text/javascript" src="Activitat%203.js">
+    </script>
+    <input type="button" value="Colors" style="width:125px;height:25px" id="boto" onclick="Emetre()"/>
+    
+</html>
+
+Activitat 4:
+<!DOCTYPE html>
+<html>
+    <body onload="datetime()">
+    </body>
+    <script type="text/javascript" src="Activitat%204.js">
+    </script>
+    <h1>Hora Actual</h1>
+    <div id="reloj">Hora actual</div>
+    <h1>Temps que falta per que acabi l'any</h1>
+    <div id="quanqueda">Hora actual</div>
+    <div id="anynou"></div>
+</html>
