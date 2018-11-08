@@ -1,0 +1,188 @@
+Activitat 1:
+function infopag1(){
+    var contenidornav = document.createElement("div")
+    var saltodelinea = document.createElement("br")
+    
+    //NAVIGATOR:
+    
+    var appname = navigator.appName
+    var textappname = document.createTextNode(appname + "  ")
+    contenidornav.appendChild(textappname)
+    
+    var appcodename = navigator.appCodeName
+    var textappcodename = document.createTextNode(appcodename + "")
+    contenidornav.appendChild(textappcodename)
+    
+    var appversion = navigator.appVersion
+    var textappversion = document.createTextNode(appversion + "   ")
+    contenidornav.appendChild(textappversion)
+    
+    
+    var plataform = navigator.plataform
+    var textplataform = document.createTextNode(plataform + "   ")
+    contenidornav.appendChild(textplataform)
+    
+    
+    var useragent = navigator.userAgent
+    var textuseragent = document.createTextNode(useragent + "   ")
+    contenidornav.appendChild(textuseragent)
+    
+    
+    var javaenabled = navigator.javaEnabled
+    var textjavaenabled = document.createTextNode(javaenabled + "   ")
+    contenidornav.appendChild(textjavaenabled)
+    
+    document.body.appendChild(contenidornav)
+    document.body.appendChild(saltodelinea)
+    
+    //SCREEN:
+    
+    var contenidorscreen = document.createElement("div")
+    
+    var screenwidth = screen.width
+    var textscreenwidth = document.createTextNode(screenwidth + "px   ")
+    contenidorscreen.appendChild(textscreenwidth)
+    
+    var screenheigth = screen.height
+    var textscreenheigth = document.createTextNode(screenheigth + "px   ")
+    contenidorscreen.appendChild(textscreenheigth)
+    
+    var screenavailwidth = screen.availWidth
+    var textscreenavailwidth = document.createTextNode(screenavailwidth + "px   ")
+    contenidorscreen.appendChild(textscreenavailwidth)
+    
+    var screenavailheigth = screen.availHeight
+    var textscreenavailheigth = document.createTextNode(screenavailheigth + "px   ")
+    contenidorscreen.appendChild(textscreenavailheigth)
+    
+    var screencolor = screen.colorDepth
+    var textscreencolor = document.createTextNode(screencolor + "   ")
+    contenidorscreen.appendChild(textscreencolor)
+    
+    var screenpixel = screen.pixelDepth
+    var textscreenpixel = document.createTextNode(screenpixel + "  ")
+    contenidorscreen.appendChild(textscreenpixel)
+    
+    document.body.appendChild(contenidorscreen)
+    
+    //HISTORY:
+     
+    var historial =history.length
+    var texthistorial = document.createTextNode(historial + " ")
+    contenidorhistory.appendChild(historial)
+    
+    document.body.appendChild(texthistorial)
+    }
+    
+    
+    Activitat 2:
+    function pop(){
+    
+    //Un array amb les pàgines que el POPUP pot obrir
+    
+    var pag = ["https://www.google.es/search?q=pccomponentes&oq=pcc&aqs=chrome.1.69i57j35i39j0l4.1565j0j7&sourceid=chrome&ie=UTF-8", "https://www.amazon.es/", "https://www.google.es/search?safe=strict&ei=SwvOW8SMBOeEgAb21JmYAg&q=snake+game&oq=snake+game&gs_l=psy-ab.3..0l9j0i131k1.3665.4870.0.5165.5.5.0.0.0.0.135.252.0j2.2.0....0...1c.1.64.psy-ab..3.2.251...0i67k1.0.AAEqcwBiaAA","http://buscaminas.eu/"]
+    
+    //Random que defineix quina pàgina s'obre
+    
+    var numero = parseInt(Math.random()*(4-0));
+    
+     //Obrim la finestra
+    
+    finestra = window.open(pag[numero],'resizable','_self');
+}
+
+//funció per tencar el popup
+
+function tencapop(){
+    finestra.close();
+}
+
+
+Activitat 3:
+function Emetre(){
+    //Creo un array amb 4 colors diferents
+    var colors = ["red", "yellow", "blue", "green"]
+    
+    //dins el setinterval faig un numero random que anirà cambiant cada 2000 milisegons i imprimints com a background la posició de l'array de colors amb el número random:
+    
+    setInterval(
+        function(){
+        numero = parseInt(Math.random()*(4-0));
+        document.body.style.backgroundColor= colors[numero]}, 2000
+    )
+}
+
+
+
+Activitat 4:
+function datetime(){
+    
+//Agafo la data i la hora a partir de la variable de date "fecha".
+    
+fecha = new Date()
+hora = fecha.getHours()
+minuto = fecha.getMinutes()
+segundo = fecha.getSeconds()
+
+//Posso tot junt en un String i ho impremeixo.
+
+tiemporeal = hora + ":" + minuto + ":" + segundo
+document.getElementById("reloj").innerHTML=tiemporeal
+setTimeout('datetime()', 1000)
+
+//Creo una variable per al mes, i una variable per els dies del mes i introdueixo els dies que té cada mes.
+
+mes = fecha.getMonth()+1
+diesmes = 0;
+if(mes == 1){
+    diesmes=31
+}
+if(mes == 2){
+    diesmes=28
+}
+if(mes == 3){
+    diesmes=31
+}
+if(mes == 4){
+    diesmes=30
+}
+if(mes == 5){
+    diesmes=31
+}
+if(mes == 6){
+    diesmes=30
+}
+if(mes == 7){
+    diesmes=31
+}
+if(mes == 8){
+    diesmes=31
+}
+if(mes == 9){
+    diesmes=30
+}
+if(mes == 10){
+    diesmes=31
+}
+if(mes == 11){
+    diesmes=30
+}
+if(mes == 12){
+    diesmes=31
+}
+    //També agafo el dia
+    
+dia = fecha.getDate()
+
+//Imprimeixo un String amb els calculs corresponents per que ens mostri el temps que falta per que acabi l'any
+
+quanqueda = "Falten " + (12-mes) + " mesos " + (diesmes-dia) + " dies " + (24-hora) + " hores " + (60-minuto) + " minuts " + (60-segundo) + " segons"
+document.getElementById("quanqueda").innerHTML=quanqueda
+
+//A continuació hi ha una petita condició per que el dia 01/01 del proper any, al minut 00 i segon 00, ens mostri un missatge.
+
+if(mes==1 && dia==1 && minuto==0 && segundo==0){
+    anynou="Ja es " + fecha.getFullYear + "!!!"
+    document.getElementById("anynou").innerHTML=anynou
+}
+}
